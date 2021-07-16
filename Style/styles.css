@@ -1,0 +1,321 @@
+:root{
+    --blanco: #ffffff;
+    --negro:#0000;
+    --primario: #ffc107;
+    --vinotinto: rgb(133, 1, 1);
+    --gris: #757575;
+    --grisClaro: #dfe9f3
+}
+/*Los Pseudo selectores inician con dos puntos
+la etiqueta root es una forma¿ de almacenar variables de css
+que se le conocen como custompropertis. en root podemos guardar 
+varios tipos de valores*/
+
+/*Globales*/
+
+html{
+    font-size: 62.5%;
+    /*Esta propiedad nos permite darle un "formato" a nuestro texto
+    esto es de gran ayuda para pantallas con mucha densidad de pixeles */
+    box-sizing: border-box;
+    /*este elemento evitara que nuestra imagen se haga mas pequeña almomento de agregar padding*/
+    scroll-snap-type: y mandatory;
+    /*Esta propiedad nos permite hacer un scroll de forma vertical mas suave*/
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+    /*Este selector hace que la propiedad de box-sizing se aplique a todos 
+    los elementos que o puedan necesitar*/
+}
+
+body{
+    font-size: 16px;
+    /*Esta propiedad nos permite darle el ismo tamaño a todso nuestro texto
+    1 rem = 10px*/
+    font-family: 'Krub', sans-serif;
+    /*Inportamos esta propiedad de qoogle fonts dentro de body para aplicar en todo el texto de la pagina */ 
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco)100%);
+    /*Esta propiedad nos permite crear el color y el degrado de fondo de la pagina*/
+}
+
+/*Tipografia*/
+
+h1{
+
+    font-size: 3.8rem;
+    /*esta propiedad permite entrar el texto dentro de la etiqueta h1 */
+}
+
+h2{
+
+ font-size: 3rem;
+    /*esta propiedad permite entrar el texto dentro de la etiqueta h1 */
+}
+
+h3{
+    font-size: 1.8rem;
+    /*esta propiedad permite entrar el texto dentro de la etiqueta h1 */
+
+}
+
+h1,h2,h3{
+
+    text-align: center;
+    /*Esta propiedad permite centrar el texdo de las etiqueta h1 ,h2, h3*/
+}
+
+/*Titulos*/
+
+.logo{
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 5rem;
+   
+}
+
+.titculo span{
+    font-size: 2rem;
+    /*Con esta propiedad podemos cambiar el tamaño de nuestro texto*/
+}
+
+.titulo{
+    font-size: 5rem;
+    font-weight: bold
+}
+.contenedor{
+    max-width: 160rem;
+    /*Esta propiedad tomara todo el espacio disponible dentro de la con esto eliminamos el scroll de la pagina*/
+    margin:0 auto 0 auto;
+    /*margin toma todos los 4 valores (arriba, derecha, abajo, izquierda)*/
+    padding: 0 3rem;
+}
+
+
+/*UTILIDADES*/
+
+.w-sm-100{
+    /*Creamos esta utilidad */
+    width: 100%;
+    /*esta propiedad permite que el boton tome todo el estacio disponible*/
+}
+@media (min-width: 768px) {
+    .w-sm-100{
+        width: auto;
+    }
+}
+.flex{
+    display: flex;
+    /*hacemos uso de las propiedades del flex box*/
+    justify-content: flex-end;
+    /*Esta propiedad permite alinear el contenido a la derecha*/
+}
+
+
+.sombra{
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+    /*Esta porpiedad nos permire craun una sombra al recuadro*/
+
+    background-color: var(--blanco);
+    /*Esta propiedad permite cambiar de color el recuadro*/
+
+    padding: 2rem;
+    /*Esta propiedad crea una un rlleno intyerno en el recuadro*/
+
+    border-radius: 1.5rem;
+
+    margin-top: 1.5rem;
+
+    
+}
+
+/*Navegacion Principal*/
+
+.nav-bg{
+    background-color: var(--vinotinto);
+    /*con esta propiedad agreganos un color de fndo a nuestra barra ne navegaion */
+}
+
+.navegacion-principal{
+ display: flex;
+ /*Conesta propiedad habilitamos las propiedaddes de flexbox en la barra de navegacion */
+ flex-direction: column;
+ /*con esta propiedad podemos cambiar el orden  de los elementos de la barra de navegacion*/
+ justify-content: space-between;
+ /*Esta propiedad trabaja horizontalmente, y la propiedad space-between */
+ align-items: center;
+ /*esta propiedad permite centrar los textos de la barra de navegacion */
+ padding-bottom: 0.5rem;
+}
+@media (min-width: 768px) {
+    /*DEntro de los mediaqueris se heredan las propiedades de las clases*/
+    .navegacion-principal{
+        flex-direction: row;
+        /*Esta propiedad elimina la funcion de display flex*/
+    }
+}
+
+.navegacion-principal a {
+ color: var(--blanco);
+ /*Por medio de la especificidad (a) hacemos que los enelaces cambien de color */
+ text-decoration: none;
+ /*esta propiedad quieta la decoracion por defecto de los enlaces*/
+ font-size: 2rem;
+ /*Con esta propiedad aumentamos el tamaño del texto dentro de la barra de navegacion*/
+ font-weight: 700;
+ /*Esta propiedad hace que el texto de los enlaces sea negrita(este rellena)*/
+ padding: 1rem 1rem;
+ /*con esa propiedad podemos hacer que nuestra barra ne navegacion sea mas ancha desde la parte de adrento
+ es decir rellenarla, del mismo orden que un reloj (arriba, derecha, abajo, izquierda)*/
+
+}
+
+.navegacion-principal a:hover {
+    /*:hover es una pseudo clase que permite cambiar el color de los elementos cuando nos hacemos 
+    encima de ellos */
+    background-color: var(--blanco);
+    /*con esta propiedad cambiamos el color del texto de la barra de navegacion */
+    color: var(--oscuro);
+    /*esta propiedad hace que el texto cambie de color cuando el puntero este encima del texto
+    denrtro de la brra de navegacion*/
+    border-radius: 15rem;
+}
+
+/*Hero*/
+
+.hero{
+    background-image: url(../Recursos/img/Ubuntu.jpg);
+    /*Con esta propiedad podemos insertar imagenes a nuestra pagina web*/
+    background-repeat: no-repeat;
+    /*Esta propiedad hace que las imanes no se repitan*/
+    background-size: cover;
+    /*Esta propiedad hace que la imagen se muestre completa */
+    height: 45rem;
+   /*Con esta priedad le damos una altura de 450px a nuestra imagen*/
+   position: relative;
+   /*La posision relativa se aplica al padre y permite al hijo tener una posisiscion adsoluta*/
+   margin-top: 1.5rem;
+   
+ 
+}
+
+.contenido-hero{
+
+    position: absolute;
+    /*Esatapropiedad permite  pocicionar elementos dentro de un aea*/
+    background-color: rgb( 0 0 0 / 70%) ;
+    /*Esta propiedad permite generar transparencia a una imagen*/
+    width: 100%;
+    /*Esta propiedad permite aplicar la transparencia a todo el ancho de la imagen */
+    height: 100%;
+    /*Esta propiedad pemite aplicar la trasnparencia a todo el alto de la imagen*/
+
+    display: flex;
+    /*Esta propiedad nos permite hacer uso de flexbox*/
+    flex-direction: column;
+    /*Esta propiedad permite organizar los elementos uno de bajo del otro*/
+    align-items: center;
+    /*Perimite centrar el texto de forma horizontal*/
+    justify-content: center;
+    /*Permite centrar el texto de forma verical*/
+    
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+    /*perimite aplicar */
+
+    color: var(--blanco);
+}
+
+/*Servicios*/
+@media (min-width: 768px) {
+    
+    .servicios{
+        display: grid;
+        /*Con esta prppiedad llamamos a las funciones de GRID*/
+        grid-template-columns: repeat(3, 1fr)
+        /*Con esta propiedad cramos tres columnas de 33.3% vcada una deL 100% DISPONIBLE*/
+        max-content 3rem;
+        /*"con esta propiedad creamos una separacion en cada uno de las tres columnas."*/
+    
+    }
+    
+}
+
+.servicio{
+
+    display: flex;
+    /*Hacenos uso de las propiedaddes de flex box esto nos coloca todo de izquierda aderecha*/
+    flex-direction: column;
+    /*Con est propiedad volvemos a unibar nustros elementos de forma vertical sin perder las propiedaddes del flex ox*/
+    align-items: center;
+    /*Con esta propiedad  centramos el contendo verticalmente*/
+
+}
+
+.servicio h3{
+    
+    color: var(--vinotinto);
+    /*Con esta propiedad añadimos color al texto del heading*/
+    font-weight: bold;
+    /*Con esta propiedad cambiamos el estilo de la tipografia del texto*/
+    font-size: 2.5rem;
+  
+}
+
+.servicio p{
+
+    line-height: 2;
+    /*Esta propiedad permite crear un espacio entre lineado el los textos*/
+    text-align: center;
+    /*Con esta propiedad centramos el texto*/++
+}
+
+.servicio .iconos{
+    height: 15rem;
+    /*Esta rpopiedad crea una altura con respecto al icono*/
+    width: 15rem;
+    /*Esta propiedad crea un ancho con repecto al icono*/
+    background-color: var(--vinotinto);
+    /*Esta propiedad permite añador un color de fondo al icono*/
+    border-radius: 50%;
+    /*Esta propiedada craea el circulo donde van los iconos*/
+    display: flex;
+    /*Hacemos uso de las propiedades del fexbox para alinear los iconos*/
+    justify-content: space-evenly;
+    /*Con esta propiedad allienamos horizontalmente y cada elemento comparatiraá el mismo espacio*/
+    align-items: center;
+    /*Con esta propiedad alienamos verticamenlte*/
+    cursor: pointer;
+
+}
+
+.footer{
+
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--vinotinto);
+    color: var(--blanco);
+    font-size: 2rem;
+    font-weight: bold;
+    padding-left: 19rem;
+}
+
+@media (min-width: 768px) {
+
+    .footer{
+        flex-direction: row;
+    }
+    
+}
+
+
+   
+
+
+
